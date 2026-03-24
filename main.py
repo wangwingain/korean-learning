@@ -21,40 +21,66 @@ author_name.addEventListener('click', create_proxy(toggle_links))
 RAW_TEXTS = {
     4: "ㄱ ㄲ ㄴ ㄷ ㄸ ㄹ ㅁ ㅂ ㅃ ㅅ ㅆ ㅇ ㅈ ㅉ ㅊ ㅋ ㅌ ㅍ ㅎ",
     5: "ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ ㅜ ㅠ ㅡ ㅣ ㅐ ㅒ ㅔ ㅖ ㅘ ㅙ ㅚ ㅝ ㅞ ㅟ ㅢ",
-    6: ("가 거 고 구 그 기 갸 겨 교 규 게 계 "
-        "나 너 노 누 느 니 냐 녀 뇨 뉴 네 녜 "
-        "다 더 도 두 드 디 댜 더 됴 듀 데 뎨 "
-        "라 러 로 루 르 리 랴 려 료 류 레 례 "
-        "마 머 모 무 므 미 먀 먀 묘 뮤 메 몌 "
-        "바 버 보 부 브 비 뱌 벼 뵤 뷰 베 볘 "
-        "사 서 소 수 스 시 샤 셔 쇼 슈 세 셰 "
-        "아 어 오 우 으 이 야 여 요 유 예 예 "
-        "자 저 조 주 즈 지 쟈 져 죠 쥬 제 졔 "
-        "차 처 초 추 츠 치 챠 처 쵸 츄 체 쳬 "
-        "카 커 코 쿠 크 키 캬 커 쿄 큐 케 켸 "
-        "타 터 토 투 트 티 탸 터 툐 튜 테 톄 "
-        "파 퍼 포 푸 프 피 퍄 퍼 표 퓨 페 폐 "
-        "하 허 호 후 흐 히 햐 혀 효 휴 헤 혜"),
-    7: ("개 걔 괘 괴 궤 귀 긔 "
-        "내 냬 놰 뇌 눼 뉘 늬 "
-        "대 댸 돼 되 뒈 뒈 듸 "
-        "래 럐 뢔 뢰 뤠 뤼 릐 "
-        "매 먜 뫠 뫼 뭬 뮈 믜 "
-        "배 뱨 봬 뵈 붸 뷔 븨 "
-        "새 쌔 쇄 쇠 쉐 쉬 싀 "
-        "애 얘 왜 외 웨 위 의 "
-        "재 쨰 좨 죄 줴 쥐 즤 "
-        "채 쳬 쵀 최 췌 츄 츼 "
-        "캐 컈 쾌 쾨 퀘 퀴 킈 "
-        "태 턔 퇘 퇴 퉤 튀 틔 "
-        "패 퍠 퐤 푀 풰 퓌 픠 "
-        "해 햬 홰 회 훼 휘 희")
+    6: "가 거 고 구 그 기 갸 겨 교 규 게 계 나 너 노 누 느 니 냐 녀 뇨 뉴 네 녜 다 더 도 두 드 디 댜 더 됴 듀 데 뎨 라 러 로 루 르 리 랴 려 료 류 레 례 마 머 모 무 므 미 먀 먀 묘 뮤 메 몌 바 버 보 부 브 비 뱌 벼 뵤 뷰 베 볘 사 서 소 수 스 시 샤 셔 쇼 슈 세 셰 아 어 오 우 으 이 야 여 요 유 예 예 자 저 조 주 즈 지 쟈 져 죠 쥬 제 졔 차 처 초 추 츠 치 챠 처 쵸 츄 체 쳬 카 커 코 쿠 크 키 캬 커 쿄 큐 케 켸 타 터 토 투 트 티 탸 터 툐 튜 테 톄 파 퍼 포 푸 프 피 퍄 퍼 표 퓨 페 폐 하 허 호 후 흐 히 햐 혀 효 휴 헤 혜",
+    7: "개 걔 괘 괴 궤 귀 긔 내 냬 놰 뇌 눼 뉘 늬 대 댸 돼 되 뒈 뒈 듸 래 럐 뢔 뢰 뤠 뤼 릐 매 먜 뫠 뫼 뭬 뮈 믜 배 뱨 봬 뵈 붸 뷔 븨 새 쌔 쇄 쇠 쉐 쉬 싀 애 얘 왜 외 웨 위 의 재 쨰 좨 죄 줴 쥐 즤 채 쳬 쵀 최 췌 츄 츼 캐 컈 쾌 쾨 퀘 퀴 킈 태 턔 퇘 퇴 퉤 튀 틔 패 퍠 퐤 푀 풰 퓌 픠 해 햬 홰 회 훼 휘 희"
 }
 
 BASE_CHINESE = {
-    'ㄱ': 'k', 'ㄲ': 'kk', 'ㄴ': 'n', 'ㄷ': 't', 'ㄸ': 'tt', 'ㄹ': 'r',
-    'ㅁ': 'm', 'ㅂ': 'p', 'ㅃ': 'pp', 'ㅅ': 's', 'ㅆ': 'ss', 'ㅇ': '',
-    'ㅈ': 'j', 'ㅉ': 'jj', 'ㅊ': 'ch', 'ㅋ': 'kh', 'ㅌ': 'th', 'ㅍ': 'ph', 'ㅎ': 'h',
+    'ㄱ': 'k', 'ㄲ': 'g', 'ㄴ': 'n', 'ㄷ': 't', 'ㄸ': 'd', 'ㄹ': 'r',
+    'ㅁ': 'm', 'ㅂ': 'p', 'ㅃ': 'b', 'ㅅ': 's', 'ㅆ': 's', 
+    'ㅈ': 'chi', 'ㅉ': 'j', 'ㅊ': 'chi', 'ㅋ': 'k', 'ㅌ': 't', 'ㅍ': 'p', 'ㅎ': 'h',
+    'ㅏ': '阿', 'ㅑ': '呀', 'ㅓ': '喔', 'ㅕ': '呦', 'ㅗ': '偶', 'ㅛ': '呦',
+    'ㅜ': '嗚', 'ㅠ': 'yu', 'ㅡ': '痾', 'ㅣ': '一',
+    'ㅐ': '欸', 'ㅒ': '耶', 'ㅔ': '欸', 'ㅖ': '耶',
+    'ㅘ': '哇', 'ㅙ': '威', 'ㅚ': '威', 'ㅝ': '窩', 'ㅞ': '威', 'ㅟ': 'wi', 'ㅢ': 'ui',
+    '가': 'ga', '거': 'geo', '고': 'go', '구': 'gu', '그': 'geu', '기': 'gi',
+    '갸': 'gya', '겨': 'gyeo', '교': 'gyo', '규': 'gyu', '게': 'ge', '계': 'gye',
+    '나': 'na', '너': 'neo', '노': 'no', '누': 'nu', '느': 'neu', '니': 'ni',
+    '냐': 'nya', '녀': 'nyeo', '뇨': 'nyo', '뉴': 'nyu', '네': 'ne', '녜': 'nye',
+    '다': 'da', '더': 'deo', '도': 'do', '두': 'du', '드': 'deu', '디': 'di',
+    '댜': 'dya', '됴': 'dyo', '듀': 'dyu', '데': 'de', '뎨': 'dye',
+    '라': 'ra', '러': 'reo', '로': 'ro', '루': 'ru', '르': 'reu', '리': 'ri',
+    '랴': 'rya', '려': 'ryeo', '료': 'ryo', '류': 'ryu', '레': 're', '례': 'rye',
+    '마': 'ma', '머': 'meo', '모': 'mo', '무': 'mu', '므': 'meu', '미': 'mi',
+    '먀': 'mya', '묘': 'myo', '뮤': 'myu', '메': 'me', '몌': 'mye',
+    '바': 'ba', '버': 'beo', '보': 'bo', '부': 'bu', '브': 'beu', '비': 'bi',
+    '뱌': 'bya', '벼': 'byeo', '뵤': 'byo', '뷰': 'byu', '베': 'be', '볘': 'bye',
+    '사': 'sa', '서': 'seo', '소': 'so', '수': 'su', '스': 'seu', '시': 'si',
+    '샤': 'sya', '셔': 'syeo', '쇼': 'syo', '슈': 'syu', '세': 'se', '셰': 'sye',
+    '아': 'a', '어': 'eo', '오': 'o', '우': 'u', '으': 'eu', '이': 'i',
+    '야': 'ya', '여': 'yeo', '요': 'yo', '유': 'yu', '예': 'ye',
+    '자': 'ja', '저': 'jeo', '조': 'jo', '주': 'ju', '즈': 'jeu', '지': 'ji',
+    '쟈': 'jya', '져': 'jyeo', '죠': 'jyo', '쥬': 'jyu', '제': 'je', '졔': 'jye',
+    '차': 'cha', '처': 'cheo', '초': 'cho', '추': 'chu', '츠': 'cheu', '치': 'chi',
+    '챠': 'chya', '쳐': 'chyeo', '쵸': 'chyo', '츄': 'chyu', '체': 'che', '쳬': 'chye',
+    '카': 'ka', '커': 'keo', '코': 'ko', '쿠': 'ku', '크': 'keu', '키': 'ki',
+    '캬': 'kya', '쿄': 'kyo', '큐': 'kyu', '케': 'ke', '켸': 'kye',
+    '타': 'ta', '터': 'teo', '토': 'to', '투': 'tu', '트': 'teu', '티': 'ti',
+    '탸': 'tya', '툐': 'tyo', '튜': 'tyu', '테': 'te', '톄': 'tye',
+    '파': 'pa', '퍼': 'peo', '포': 'po', '푸': 'pu', '프': 'peu', '피': 'pi',
+    '퍄': 'pya', '표': 'pyo', '퓨': 'pyu', '페': 'pe', '폐': 'pye',
+    '하': 'ha', '허': 'heo', '호': 'ho', '후': 'hu', '흐': 'heu', '히': 'hi',
+    '햐': 'hya', '혀': 'hyeo', '효': 'hyo', '휴': 'hyu', '헤': 'he', '혜': 'hye',
+    '개': 'gae', '걔': 'gyae', '괘': 'gwae', '괴': 'goe', '궤': 'gwe', '귀': 'gwi', '긔': 'gui',
+    '내': 'nae', '냬': 'nyae', '놰': 'nwae', '뇌': 'noe', '눼': 'nwe', '뉘': 'nwi', '늬': 'nui',
+    '대': 'dae', '댸': 'dyae', '돼': 'dwae', '되': 'doe', '뒈': 'dwe', '듸': 'dui',
+    '래': 'rae', '럐': 'ryae', '뢔': 'rwae', '뢰': 'roe', '뤠': 'rwe', '뤼': 'rwi', '릐': 'rui',
+    '매': 'mae', '먜': 'myae', '뫠': 'mwae', '뫼': 'moe', '뭬': 'mwe', '뮈': 'mwi', '믜': 'mui',
+    '배': 'bae', '뱨': 'byae', '봬': 'bwae', '뵈': 'boe', '붸': 'bwe', '뷔': 'bwi', '븨': 'bui',
+    '새': 'sae', '쌔': 'syae', '쇄': 'swae', '쇠': 'soe', '쉐': 'swe', '쉬': 'swi', '싀': 'sui',
+    '애': 'ae', '얘': 'yae', '왜': 'wae', '외': 'oe', '웨': 'we', '위': 'wi', '의': 'ui',
+    '재': 'jae', '쨰': 'jyae', '좨': 'jwae', '죄': 'joe', '줴': 'jwe', '쥐': 'jwi', '즤': 'jui',
+    '채': 'chae', '쳬': 'chyae', '쵀': 'chwae', '최': 'choe', '췌': 'chwe', '츼': 'chwi',
+    '캐': 'kae', '컈': 'kyae', '쾌': 'kwae', '쾨': 'koe', '퀘': 'kwe', '퀴': 'kwi', '킈': 'kui',
+    '태': 'tae', '턔': 'tyae', '퇘': 'twae', '퇴': 'toe', '퉤': 'twe', '튀': 'twi', '틔': 'tui',
+    '패': 'pae', '퍠': 'pyae', '퐤': 'pwae', '푀': 'poe', '풰': 'pwe', '퓌': 'pwi', '픠': 'pui',
+    '해': 'hae', '햬': 'hyae', '홰': 'hwae', '회': 'hoe', '훼': 'hwe', '휘': 'hwi', '희': 'hui'
+}
+
+BASE_ROMAJI = {
+    'ㄱ': 'g', 'ㄲ': 'kk', 'ㄴ': 'n', 'ㄷ': 'd', 'ㄸ': 'tt', 'ㄹ': 'r',
+    'ㅁ': 'm', 'ㅂ': 'b', 'ㅃ': 'pp', 'ㅅ': 's', 'ㅆ': 'ss', 'ㅇ': '',
+    'ㅈ': 'j', 'ㅉ': 'jj', 'ㅊ': 'ch', 'ㅋ': 'k', 'ㅌ': 't', 'ㅍ': 'p', 'ㅎ': 'h',
     'ㅏ': 'a', 'ㅑ': 'ya', 'ㅓ': 'eo', 'ㅕ': 'yeo', 'ㅗ': 'o', 'ㅛ': 'yo',
     'ㅜ': 'u', 'ㅠ': 'yu', 'ㅡ': 'eu', 'ㅣ': 'i',
     'ㅐ': 'ae', 'ㅒ': 'yae', 'ㅔ': 'e', 'ㅖ': 'ye',
@@ -103,8 +129,6 @@ BASE_CHINESE = {
     '해': 'hae', '햬': 'hyae', '홰': 'hwae', '회': 'hoe', '훼': 'hwe', '휘': 'hwi', '희': 'hui'
 }
 
-BASE_ROMAJI = BASE_CHINESE
-
 library_words = {}
 for key in RAW_TEXTS:
     library_words[key] = RAW_TEXTS[key].split()
@@ -136,8 +160,8 @@ desktop_config = {
     3: {'left': '75%', 'top': '40%', 'width': '23%', 'height': '18%', 'font_size': '76px'},
     4: {'left': '1%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '子音', 'icon_size': '24px'},
     5: {'left': '10%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '母音', 'icon_size': '24px'},
-    6: {'left': '19%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '基本', 'icon_size': '24px'},
-    7: {'left': '28%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '複合', 'icon_size': '24px'},
+    6: {'left': '19%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '基本字', 'icon_size': '24px'},
+    7: {'left': '28%', 'top': '83%', 'width': '8%', 'height': '14%', 'icon': '複合字', 'icon_size': '24px'},
     8: {'left': '59%', 'top': '70%', 'width': '15%', 'height': '27%', 'font_size': '40px'},
     9: {'left': '75%', 'top': '70%', 'width': '15%', 'height': '27%', 'font_size': '40px'}
 }
@@ -148,8 +172,8 @@ mobile_config = {
     3: {'font_size': '30px', 'icon': None},
     4: {'icon': '子音', 'icon_size': '14px'},
     5: {'icon': '母音', 'icon_size': '14px'},
-    6: {'icon': '基本', 'icon_size': '14px'},
-    7: {'icon': '複合', 'icon_size': '14px'},
+    6: {'icon': '基本字', 'icon_size': '14px'},
+    7: {'icon': '複合字', 'icon_size': '14px'},
     8: {'font_size': '18px'},
     9: {'font_size': '18px'}
 }
@@ -255,8 +279,8 @@ base_config = {
     3: {'class': 'dialog-3', 'is_clickable': False},
     4: {'class': 'dialog-4', 'is_clickable': True, 'icon': '子音'},
     5: {'class': 'dialog-5', 'is_clickable': True, 'icon': '母音'},
-    6: {'class': 'dialog-6', 'is_clickable': True, 'icon': '基本'},
-    7: {'class': 'dialog-7', 'is_clickable': True, 'icon': '複合'},
+    6: {'class': 'dialog-6', 'is_clickable': True, 'icon': '基本字'},
+    7: {'class': 'dialog-7', 'is_clickable': True, 'icon': '複合字'},
     8: {'class': 'dialog-8', 'is_clickable': True},
     9: {'class': 'dialog-9', 'is_clickable': True}
 }
@@ -269,7 +293,7 @@ for dialog_id in range(1, 10):
 if loading_div:
     loading_div.style.display = 'none'
 
-# ========== 朗讀功能（韓文版） ==========
+# ========== 朗讀功能 ==========
 from js import speechSynthesis, SpeechSynthesisUtterance
 
 best_ko_voice = None
@@ -292,11 +316,9 @@ def speak_text(event):
         init_voices()
     current_word_element = document.getElementById('content-1')
     if not current_word_element:
-        print("找不到當前文字元素")
         return
     text_to_speak = current_word_element.textContent
-    if not text_to_speak or text_to_speak == '':
-        print("沒有文字可朗讀")
+    if not text_to_speak:
         return
     if speaker_red_btn:
         speaker_red_btn.classList.add('speaking')
@@ -306,18 +328,16 @@ def speak_text(event):
     utterance.pitch = 1.05
     if best_ko_voice:
         utterance.voice = best_ko_voice
-    def on_end(event):
+    def on_end(e):
         if speaker_red_btn:
             speaker_red_btn.classList.remove('speaking')
-    def on_error(event):
+    def on_error(e):
         if speaker_red_btn:
             speaker_red_btn.classList.remove('speaking')
-        print(f"朗讀錯誤: {event.error}")
     utterance.onend = create_proxy(on_end)
     utterance.onerror = create_proxy(on_error)
     speechSynthesis.cancel()
     speechSynthesis.speak(utterance)
-    print(f"朗讀: {text_to_speak} (語言: 韓文)")
 
 def on_voices_changed(event=None):
     init_voices()
@@ -330,10 +350,8 @@ def bind_speaker_button():
     speaker_red_btn = document.getElementById('speaker-btn-red')
     if speaker_red_btn:
         speaker_red_btn.addEventListener('click', create_proxy(speak_text))
-        print("音量按鈕已綁定")
     else:
         window.setTimeout(create_proxy(bind_speaker_button), 500)
-
 bind_speaker_button()
 
 def update_library_appearance():
@@ -432,5 +450,4 @@ update_displays()
 
 print('=' * 50)
 print('王又贏學韓文四十音 1.6.0 - 音量按鈕在紅色框右下角')
-print('音量按鈕放大兩倍，手機版同樣顯示在紅色框內部右下角')
 print('=' * 50)
